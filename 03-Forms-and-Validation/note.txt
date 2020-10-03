@@ -1,0 +1,11 @@
+# Flask wtf form
+pip install flask-wtf
+
+Flask-WTF. WTF stands for WT Forms which is intended to provide the interactive user interface for the user. The WTF is a built-in module of the flask which provides an alternative way of designing forms in the flask web applications.
+
+Secure Form with CSRF token. Global CSRF protection. reCAPTCHA support. File upload that works with Flask-Uploads. Internationalization using Flask-Babel.
+
+# Create secret key
+>>> import secrets
+>>> secrets.token_hex(16)
+
