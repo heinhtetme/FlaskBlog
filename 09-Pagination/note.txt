@@ -1,0 +1,41 @@
+>>>from flaskblog.models import Post
+
+posts = Post.query.all()
+for post in posts:
+    print(post)
+
+posts = Post.query.paginate()
+posts
+dir(posts)
+
+# no. of posts in page
+posts.per_page
+
+# current page
+posts.page
+
+for post in posts.items:
+    print(post)
+
+posts = Post.query.paginate(page=2)
+for post in posts.items:
+    print(post)
+
+posts = Post.query.paginate(per_page=5)
+posts.page
+
+for post in posts.items:
+    print(post)
+
+posts = Post.query.paginate(per_page=5, page=2)
+posts.page
+
+for post in posts.items:
+    print(post)
+
+posts.total
+
+posts = Post.query.paginate(page=6, per_page=2)
+
+for page in posts.iter_pages():
+    print(page)
