@@ -1,0 +1,11 @@
+>>>from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+s = Serializer('secret', 30)
+
+token = s.dumps({'user_id': 1}).decode('utf-8')
+s.loads(token)
+
+# Signature expired
+s.loads(token)
+
+# install mail
+pip install flask-mail
